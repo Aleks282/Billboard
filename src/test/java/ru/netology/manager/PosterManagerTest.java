@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.MovieItem;
 
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class PosterManagerTest {
@@ -19,7 +20,6 @@ public class PosterManagerTest {
     private MovieItem ninth = new MovieItem(9, 9, "ninth", "mystery", 18);
     private MovieItem tenth = new MovieItem(10, 10, "tenth", "documentary", 19);
     private MovieItem eleventh = new MovieItem(11, 11, "eleventh", "detective", 20);
-
     @BeforeEach
     public void setUp() {
         manager.add(first);
@@ -35,7 +35,7 @@ public class PosterManagerTest {
 
     @Test
     public void shouldGetTenMovies() {
-        manager.add(tenth);
+        manager.add (tenth);
         MovieItem[] actual = manager.getAll();
         MovieItem[] expected = new MovieItem[]{tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second, first};
         assertArrayEquals(expected, actual);
@@ -50,16 +50,15 @@ public class PosterManagerTest {
 
     @Test
     public void shouldGetMoviesMoreThanTen() {
-        manager.add(tenth);
-        manager.add(eleventh);
+        manager.add (tenth);
+        manager.add (eleventh);
         MovieItem[] actual = manager.getAll();
         MovieItem[] expected = new MovieItem[]{eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second};
         assertArrayEquals(expected, actual);
 
     }
-
     @Test
-    public void shouldNotGetMoviesIfUnderZero() {
+    public void shouldNotGetMoviesIfUnderZero () {
         manager = new PosterManager(-5);
         MovieItem[] actual = manager.getAll();
         MovieItem[] expected = new MovieItem[]{};
