@@ -13,4 +13,5 @@ public class MovieItem {
     private String movieName;
     private String movieGenre;
     private int date;
+
 }
