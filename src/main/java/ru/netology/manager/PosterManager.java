@@ -31,6 +31,9 @@ public class PosterManager {
         int resultLength;
         if (films.length < limit) {
             resultLength = films.length;
+            if (films.length > limit) {
+                resultLength = films.length;
+            }
         } else {
             resultLength = limit;
         }
